@@ -1,0 +1,46 @@
+.container {
+    padding: 0 10px;
+    width: 150px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.title {
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+.greenMark {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: lightgreen;
+}
+
+.blueMark {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: lightblue;
+}
+
+.redMark {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: lightcoral;
+}
+
+.selected {
+    background-color: lightgray;
+}
+
+.controlContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 0;
+}

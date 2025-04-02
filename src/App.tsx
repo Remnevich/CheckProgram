@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, {JSX, useState} from "react";
+import {Declaration, TextLabel} from "./componenets/Declaration/Declaration";
+import {Control} from "./componenets/Controls/Control";
 
-function App() {
-  const [count, setCount] = useState(0)
+import styles from './App.module.css'
+
+export const App: React.FC = (): JSX.Element => {
+
+  const [labeling, setLabeling] = useState<TextLabel[]>([])
+  const [selectedLabel, setSelectedLabel] = useState<string | null>(null)
+
+  const handleLabelSelect = (label: string) => setSelectedLabel(label)
+
+  const text = `Генеральному директору\nООО «Строй-Сервис М»\nИванчукову Д.Т.\nкрановщика\nСитдикова Л. Я.\n\nЗаявление.\n\nПрошу предоставить мне ежегодный оплачиваемый отпуск с «1» сентября 2016 г. по «28» сентября 2016 г.\nсроком на 28 календарных дней.\n\n_____________________/Ситдиков Л.Я./\n\n15 августа 2016 г.`
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+          <>
+              <div className={styles.wrapper}>
+                  <Declaration
+                      text={text}
+                      labeling={labeling}
+                      onChange={setLabeling}
+                      selectedLabel={selectedLabel}
+                  />
+                  <Control onLabelSelected={handleLabelSelect} selectedLabel={selectedLabel}/>
+              </div>
+          </>
   )
 }
-
-export default App

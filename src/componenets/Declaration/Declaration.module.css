@@ -1,0 +1,30 @@
+.container {
+    padding: 0 10px 10px;
+    width: 400px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.contacts p {
+    padding: 0;
+    margin: 5px 0;
+}
+
+.title {
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+.textContent {
+    white-space: pre-wrap;
+}
+
+.declarationType {
+    margin: 16px 0;
+}
+
+.highlight {
+    background-color: lightgreen;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
