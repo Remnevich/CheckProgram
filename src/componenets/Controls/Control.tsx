@@ -1,11 +1,7 @@
 import {JSX} from "react";
+import {ControlProps} from './Control.model.ts'
 
 import styles from './Control.module.css'
-
-type ControlProps = {
-    onLabelSelected: (label: string) => void;
-    selectedLabel: string | null
-}
 
 type Labels = {
     label: string;
